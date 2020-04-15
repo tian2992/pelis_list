@@ -5,30 +5,37 @@ from django import forms
 
 
 # Create your views here.
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
-from pelis.mooviee.models import Movie
-
-
-class MovieForm(forms.Form):
-    add_movie_pk = forms.IntegerField()
-    add_user_pk = forms.ImageField()
-
+from mooviee.models import Movie
+#
+# class MovieForm(forms.Form):
+#     add_movie_pk = forms.IntegerField()
+#     add_user_pk = forms.ImageField()
 
 
-
-class BookListView(ListView):
+class MoveDetailView(DetailView):
     model = Movie
+
+
+class MovieListView(ListView):
+    model = Movie
+    ## generates a context variable
+    ## movie_list
+
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get the context
-        context = super(BookListView, self).get_context_data(**kwargs)
+        context = super(MovieListView, self).get_context_data(**kwargs)
         # Create any data and add it to the context
         context['some_data'] = 'This is just some data'
         return context
 
     def get_queryset(self):
-        return Movie.objects.filter(title__icontains='war')[:5] # Get 5 books containing the title war
+        ## result of movie_list
+        return Movie.objects.filter()[:10]
+        #       return Movie.objects.filter(title__icontains='war')[:5] # Get 5 books containing the title war
+
 
 def my_movie_view(request):
 
@@ -39,7 +46,7 @@ def my_movie_add(request):
     pass
 
 
-class ArticleForm(Form):
+class ArticleForm(forms.Form):
     pass
 
 

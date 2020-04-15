@@ -1,0 +1,14 @@
+{{ some_data }}
+
+
+  {% if movie_list %}
+  <ul>
+    {% for movie in movie_list %}
+      <li>
+        <a href="{{ movie.get_absolute_url }}">{{ movie.title }}</a> ({{movie.author}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %}

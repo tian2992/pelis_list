@@ -3,6 +3,10 @@
 import os
 import sys
 
+import sys
+
+sys.path.append("/home/tian/utz/opent/curso2/pelis/")
+
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pelis.settings')
