@@ -27,5 +27,7 @@ class MovieList(models.Model):
         through_fields=('movie_list', 'movie', 'user'),
     )
 
+    def __str__(self):
+        return f"Lis: {self.title} - {self.user}"
 # Create your models here.
 

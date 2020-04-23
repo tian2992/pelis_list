@@ -5,7 +5,7 @@ import sys
 
 import sys
 
-sys.path.append("/home/tian/utz/opent/curso2/pelis/")
+sys.path.insert(0, os.path.abspath('.'))
 
 
 def main():
