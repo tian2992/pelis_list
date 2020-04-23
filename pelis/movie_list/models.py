@@ -1,6 +1,6 @@
 from django.db import models
 from mooviee.models import Movie, Profile
-
+##  Esta linea importa los modelos user
 # from django.contrib.auth.models import User
 
 
